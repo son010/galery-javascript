@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tshirt Kaula</title>
+</head>
+<body>
+    <h1>Tshirt Kaula</h1>
+    
+
+    <img src="gambar/0.png" width=300 id="gambar">
+    <br>
+    <div id="caption">Croquet Black Ringer Tee</div>
+    <br>
+    <a href="#" onclick=sebelum(0)>sebelum</a>
+    
+    <a href="#" onclick="ganti(0)">1</a>
+    <a href="#" onclick="ganti(1)">2</a>
+    <a href="#" onclick="ganti(2)">3</a>
+    <a href="#" onclick="ganti(3)">4</a>
+    <a href="#" onclick="ganti(4)">5</a>
+
+    <a href="#" onclick=sesudah(0)>sesudah</a>
+
+    <script>
+      var nomor   = 0;
+      var caption = document.getElementById('caption');
+      var text    = ['Croquet Black Ringer Tee','Croquet Green Ringer Tee ','Croquet White Ringer Tee','Stripe Pike Shirt','Wallson Navy Basic Tees '];
+
+        function ganti(angka){
+            nomor = angka;
+            var lokasi = 'gambar/' + nomor + '.png';
+            document.getElementById('gambar').src = lokasi;
+            caption.innerHTML = text[angka];
+            return false;
+        }
+        function sebelum(){
+            nomor = nomor - 1;
+            
+            if(nomor < 0){
+                nomor = 0;
+                
+                
+            }
+
+            var lokasi = 'gambar/' + nomor + '.png';
+            document.getElementById('gambar').src = lokasi;
+            caption.innerHTML = text[nomor];
+            return false;
+        }
+        function sesudah(){
+            nomor = nomor + 1;
+
+            if(nomor > 4){
+                nomor = 4;
+                
+                
+            }
+
+            var lokasi = 'gambar/' + nomor + '.png';
+            document.getElementById('gambar').src = lokasi;
+            caption.innerHTML = text[nomor];
+            return false;
+        }
+
+
+    </script>
+</body> 
+</html>
